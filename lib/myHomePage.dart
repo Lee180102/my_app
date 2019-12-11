@@ -12,17 +12,35 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    //Scaffold是Material中主要的布局组件.
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-          actions: <Widget>[
-            new IconButton(
-              icon: new Icon(Icons.list),
-              onPressed: _pushDemoList,
-            )
-          ],
+      appBar: AppBar(
+        leading: new IconButton(
+          icon: new Icon(Icons.menu),
+          tooltip: 'Navigation menu',
+          onPressed: _pushDemoList,
         ),
-        body: new Center(child: new Text("Home",style: TextStyle(fontSize: 30.0),),));
+        title: Text(widget.title),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: null,
+          ),
+        ],
+      ),
+      body: new Center(
+        child: new Text(
+          "Home",
+          style: TextStyle(fontSize: 30.0),
+        ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        tooltip: 'Add', // used by assistive technologies
+        child: new Icon(Icons.add),
+        onPressed: null,
+      ),
+    );
   }
 
   _pushDemoList() {
