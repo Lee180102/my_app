@@ -33,6 +33,7 @@ class _BasicWidgetState extends State<BasicWidget> {
 }
 
 //放置了一个MyAppBar实例，将一个Text widget作为其标题传递给应用程序栏。将widget作为参数传递给其他widget是一种强大的技术，可以让您创建各种复杂的widget。
+//我们只使用了无状态的widget。无状态widget从它们的父widget接收参数， 它们被存储在final型的成员变量中。
 class MyAppBar extends StatelessWidget {
   MyAppBar({this.title});
   final Widget title;
@@ -51,7 +52,7 @@ class MyAppBar extends StatelessWidget {
             tooltip: 'Navigation menu',
             onPressed: null, // null 会禁用 button
           ),
-          // Expanded expands its child to fill the available space.
+          // 中间的title widget被标记为Expanded, ，这意味着它会填充尚未被其他子项占用的的剩余可用空间。
           new Expanded(
             child: title,
           ),
